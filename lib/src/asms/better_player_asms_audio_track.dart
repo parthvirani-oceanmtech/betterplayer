@@ -18,11 +18,17 @@ class BetterPlayerAsmsAudioTrack {
   ///mimeType of the audio track
   final String? mimeType;
 
-  BetterPlayerAsmsAudioTrack(
-      {this.id,
-      this.segmentAlignment,
-      this.label,
-      this.language,
-      this.url,
-      this.mimeType});
+  BetterPlayerAsmsAudioTrack({
+    this.id,
+    this.segmentAlignment,
+    this.label,
+    this.language,
+    this.url,
+    this.mimeType,
+  });
+
+  @override
+  String toString() {
+    return 'id : $id segmentAlignment : $segmentAlignment label : $label language : $language url : $url mimeType  : $mimeType';
+  }
 }

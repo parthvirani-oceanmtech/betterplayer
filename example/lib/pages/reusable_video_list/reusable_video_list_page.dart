@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:example/constants.dart';
 import 'package:example/model/video_list_data.dart';
 import 'package:example/pages/reusable_video_list/reusable_video_list_controller.dart';
@@ -12,12 +10,22 @@ class ReusableVideoListPage extends StatefulWidget {
 }
 
 class _ReusableVideoListPageState extends State<ReusableVideoListPage> {
-  ReusableVideoListController videoListController =
-      ReusableVideoListController();
-  final _random = new Random();
+  ReusableVideoListController videoListController = ReusableVideoListController();
   final List<String> _videos = [
-    Constants.forBiggerBlazesUrl,
-    Constants.forBiggerJoyridesVideoUrl,
+    "https://vz-352e339f-24b.b-cdn.net/29d0d68f-bc31-4c9b-bd6a-bcbc0c526382/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/f0b2c6bc-38c9-4049-8c7b-a09708f95d6c/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/29d0d68f-bc31-4c9b-bd6a-bcbc0c526382/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/f0b2c6bc-38c9-4049-8c7b-a09708f95d6/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/64601abb-7fdc-4bf7-9cdd-fcdf4069ae7b/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/93879e07-badc-46c0-88eb-3622c963cae6/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/328b752b-c488-47b0-8203-ba002d20be63/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/759c85af-c027-4622-820a-54d9fb8a7a95/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/a3a483c0-5e5a-403a-ac45-140eb88bb869/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/867d1bf9-0968-4fed-9d24-f1979fcf19e4/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/64ed8c7c-daf3-4d15-ad7f-2095fa4efabb/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/673d7730-a277-45fa-8fff-ea1369765859/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/d789d391-054c-42dd-a4c9-6e7065e5bb65/playlist.m3u8",
+    "https://vz-352e339f-24b.b-cdn.net/01c8daad-3017-4d5c-8496-557e12c29034/playlist.m3u8",
   ];
   List<VideoListData> dataList = [];
   var value = 0;
@@ -32,9 +40,8 @@ class _ReusableVideoListPageState extends State<ReusableVideoListPage> {
   }
 
   void _setupData() {
-    for (int index = 0; index < 10; index++) {
-      var randomVideoUrl = _videos[_random.nextInt(_videos.length)];
-      dataList.add(VideoListData("Video $index", randomVideoUrl));
+    for (int index = 0; index < _videos.length; index++) {
+      dataList.add(VideoListData("Video $index", _videos[index]));
     }
   }
 

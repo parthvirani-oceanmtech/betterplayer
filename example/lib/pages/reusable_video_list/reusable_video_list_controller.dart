@@ -16,9 +16,8 @@ class ReusableVideoListController {
   }
 
   BetterPlayerController? getBetterPlayerController() {
-    final freeController = _betterPlayerControllerRegistry.firstWhereOrNull(
-        (controller) =>
-            !_usedBetterPlayerControllerRegistry.contains(controller));
+    final freeController = _betterPlayerControllerRegistry
+        .firstWhereOrNull((controller) => !_usedBetterPlayerControllerRegistry.contains(controller));
 
     if (freeController != null) {
       _usedBetterPlayerControllerRegistry.add(freeController);
@@ -27,8 +26,7 @@ class ReusableVideoListController {
     return freeController;
   }
 
-  void freeBetterPlayerController(
-      BetterPlayerController? betterPlayerController) {
+  void freeBetterPlayerController(BetterPlayerController? betterPlayerController) {
     _usedBetterPlayerControllerRegistry.remove(betterPlayerController);
   }
 

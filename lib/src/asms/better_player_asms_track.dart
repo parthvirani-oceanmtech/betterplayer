@@ -49,4 +49,9 @@ class BetterPlayerAsmsTrack {
         codecs == other.codecs &&
         mimeType == other.mimeType;
   }
+
+  @override
+  String toString() {
+    return 'id : $id, width : $width, height : $height, bitrate : $bitrate, frameRate : $frameRate, codecs : $codecs, mimeType : $mimeType';
+  }
 }
